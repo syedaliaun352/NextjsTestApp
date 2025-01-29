@@ -32,7 +32,7 @@ export default function Home() {
             value={divColor}
             onChange={changeColor}
             placeholder="Enter Color"
-            className="w-48 h-10 border-2 border-teal-500 rounded-lg px-3 text-black focus:outline-none focus:ring-2 focus:ring-teal-400"
+            className="w-48 h-10 border-2 border-teal-500 rounded-lg px-3 text-white focus:outline-none focus:ring-2 focus:ring-teal-400"
           />
         </label>
         <div
@@ -77,7 +77,7 @@ export default function Home() {
             value={typed}
             onChange={typefunc}
             placeholder="Type anything"
-            className="w-48 h-10 border-2 border-teal-500 rounded-lg px-3 text-black focus:outline-none focus:ring-2 focus:ring-teal-400"
+            className="w-48 h-10 border-2 border-teal-500 rounded-lg px-3 text-white focus:outline-none focus:ring-2 focus:ring-teal-400"
           />
         </label>
         <p className="text-white text-2xl">You Typed: {typed}</p>

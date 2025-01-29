@@ -47,13 +47,13 @@ export default function Weather() {
     }
 
     return (
-        <div className='flex flex-col items-center justify-center p-2 m-2'>
+        <div className='flex flex-col items-center justify-center p-2 m-2 text-white'>
             <h1 className='text-2xl font-bold'>Weather App</h1>
             <div className='flex flex-col items-center justify-center p-2 m-2'>
                 <input
                     type="text"
                     placeholder='Enter City'
-                    className='p-2 m-2 rounded border-2 border-teal-400 text-black'
+                    className='p-2 m-2 rounded border-2 border-teal-400 text-white'
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
                 />
