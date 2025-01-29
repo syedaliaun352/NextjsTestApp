@@ -6,7 +6,7 @@ export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="bg-transparent border-b border-teal-500">
+        <header className="bg-transparent border-b-2 border-teal-500">
             <nav className="container mx-auto px-4 py-3">
                 <div className="flex justify-between items-center">
                     <h1 className="text-white font-bold text-lg">Syed Ali Aun</h1>
