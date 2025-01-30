@@ -41,10 +41,12 @@ export default function Colors() {
     return (
         <>
             <div className='text-white m-2 p-2 flex flex-col items-center justify-center' style={{ backgroundColor: color }}>
+                <h1 className='mb-10 text-4xl font-bold bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent'>Ramdom Color Changer</h1>
                 <h1 className='text-2xl font-bold'>Current Color Mode: {mode}</h1>
                 <h1 className='text-2xl font-bold'>Current Color: {color}</h1>
                 <button className='m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={changeMode}>Change Mode</button>
-                <button className='m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={changeColor}>Change Color</button>            </div>
+                <button className='m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={changeColor}>Change Color</button>
+            </div>
         </>
     )
 }
