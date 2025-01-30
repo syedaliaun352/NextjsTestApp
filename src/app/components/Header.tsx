@@ -15,6 +15,7 @@ export default function Header() {
                         <Link href="/" className="text-gray-300 hover:text-teal-500">Home</Link>
                         <Link href="/weather" className="text-gray-300 hover:text-teal-500">Weather</Link>
                         <Link href="/qr" className="text-gray-300 hover:text-teal-500">QR Code</Link>
+                        <Link href="/chat" className="text-gray-300 hover:text-teal-500">ChatBot</Link>
                         <Link href="/colors" className="text-gray-300 hover:text-teal-500">Random Colors</Link>
                     </div>
                     <button
@@ -32,6 +33,7 @@ export default function Header() {
                         <Link href="/" className="text-gray-300 py-2">Home</Link>
                         <Link href="/weather" className="text-gray-300 py-2">Weather</Link>
                         <Link href="/qr" className="text-gray-300 py-2">QR Code</Link>
+                        <Link href="/chat" className="text-gray-300 py-2">ChatBot</Link>
                         <Link href="/colors" className="text-gray-300 py-2">Random Colors</Link>
                     </div>
                 )}
