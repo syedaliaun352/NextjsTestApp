@@ -20,7 +20,7 @@ export default function Chatbot() {
             setLoading(true);
 
             const result = await model.generateContent(input);
-            const response = await result.response;
+            const response = result.response;
             setMessages(prev => [...prev, { text: response.text(), isUser: false }]);
 
         } catch (error) {

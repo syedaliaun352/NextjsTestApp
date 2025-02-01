@@ -17,6 +17,7 @@ export default function Header() {
                         <Link href="/qr" className="text-gray-300 hover:text-teal-500">QR Code</Link>
                         <Link href="/chat" className="text-gray-300 hover:text-teal-500">ChatBot</Link>
                         <Link href="/colors" className="text-gray-300 hover:text-teal-500">Random Colors</Link>
+                        <Link href="/todo" className="text-gray-300 hover:text-teal-500">Todo List</Link>
                     </div>
                     <button
                         onClick={() => setIsOpen(!isOpen)}
@@ -35,6 +36,8 @@ export default function Header() {
                         <Link href="/qr" className="text-gray-300 py-2">QR Code</Link>
                         <Link href="/chat" className="text-gray-300 py-2">ChatBot</Link>
                         <Link href="/colors" className="text-gray-300 py-2">Random Colors</Link>
+                        <Link href="/todo" className="text-gray-300 py-2">Todo List</Link>
+
                     </div>
                 )}
             </nav>

@@ -22,7 +22,7 @@ export default function Qr() {
                 />
 
                 {value && (
-                    <div className="p-4 mt-6 border-4 border-teal-500 duration-300">
+                    <div className="p-4 mt-6 border-4 bg-gray-100 border-teal-500 duration-300">
                         <QRCode
                             value={value}
                             size={256}
