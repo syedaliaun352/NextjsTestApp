@@ -30,7 +30,7 @@ export default function Weather() {
         try {
             setLoading(true)
             setError(null)
-            const apiKey = '5fee79025f68465dbf4114454232705'
+            const apiKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY
             const weatherlink = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`
 
             const res = await fetch(weatherlink)
