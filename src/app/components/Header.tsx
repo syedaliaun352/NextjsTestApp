@@ -18,6 +18,8 @@ export default function Header() {
                         <Link href="/chat" className="text-gray-300 hover:text-teal-500">ChatBot</Link>
                         <Link href="/colors" className="text-gray-300 hover:text-teal-500">Random Colors</Link>
                         <Link href="/todo" className="text-gray-300 hover:text-teal-500">Todo List</Link>
+                        <Link href="/tictactoc" className="text-gray-300 hover:text-teal-500">TicTacToc</Link>
+
                     </div>
                     <button
                         onClick={() => setIsOpen(!isOpen)}
@@ -37,6 +39,7 @@ export default function Header() {
                         <Link href="/chat" className="text-gray-300 py-2">ChatBot</Link>
                         <Link href="/colors" className="text-gray-300 py-2">Random Colors</Link>
                         <Link href="/todo" className="text-gray-300 py-2">Todo List</Link>
+                        <Link href="/tictactoc" className="text-gray-300 py-2">TicTacToc</Link>
 
                     </div>
                 )}
