@@ -19,6 +19,7 @@ export default function Header() {
                         <Link href="/colors" className="text-gray-300 hover:text-teal-500">Random Colors</Link>
                         <Link href="/todo" className="text-gray-300 hover:text-teal-500">Todo List</Link>
                         <Link href="/tictactoc" className="text-gray-300 hover:text-teal-500">TicTacToc</Link>
+                        <Link href="/notification" className="text-gray-300 hover:text-teal-500">Notification</Link>
 
                     </div>
                     <button
@@ -33,13 +34,14 @@ export default function Header() {
 
                 {isOpen && (
                     <div className="md:hidden mt-2 flex flex-col gap-2">
-                        <Link href="/" className="text-gray-300 py-2">Home</Link>
-                        <Link href="/weather" className="text-gray-300 py-2">Weather</Link>
-                        <Link href="/qr" className="text-gray-300 py-2">QR Code</Link>
-                        <Link href="/chat" className="text-gray-300 py-2">ChatBot</Link>
-                        <Link href="/colors" className="text-gray-300 py-2">Random Colors</Link>
-                        <Link href="/todo" className="text-gray-300 py-2">Todo List</Link>
-                        <Link href="/tictactoc" className="text-gray-300 py-2">TicTacToc</Link>
+                        <Link href="/" onClick={() => setIsOpen(false)} className="text-gray-300 py-2">Home</Link>
+                        <Link href="/weather" onClick={() => setIsOpen(false)} className="text-gray-300 py-2">Weather</Link>
+                        <Link href="/qr" onClick={() => setIsOpen(false)} className="text-gray-300 py-2">QR Code</Link>
+                        <Link href="/chat" onClick={() => setIsOpen(false)} className="text-gray-300 py-2">ChatBot</Link>
+                        <Link href="/colors" onClick={() => setIsOpen(false)} className="text-gray-300 py-2">Random Colors</Link>
+                        <Link href="/todo" onClick={() => setIsOpen(false)} className="text-gray-300 py-2">Todo List</Link>
+                        <Link href="/tictactoc" onClick={() => setIsOpen(false)} className="text-gray-300 py-2">TicTacToc</Link>
+                        <Link href="/notification" onClick={() => setIsOpen(false)} className="text-gray-300 py-2">Notification</Link>
 
                     </div>
                 )}
