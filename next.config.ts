@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   // basePath: '/next',
   // assetPrefix: '/next',
-  output: 'export',
+  // output: 'export',
   trailingSlash: true
 };
 
