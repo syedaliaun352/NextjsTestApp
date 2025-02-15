@@ -20,7 +20,7 @@ export default function Login() {
             await logIn(email, password)
             setEmail('')
             setPassword('')
-            setMessage("User Logged In!, Redirecting..")
+            setMessage("Login successfully, Redirecting..")
             setTimeout(() => {
                 router.push('/')
 
@@ -71,8 +71,9 @@ export default function Login() {
                             <h1 className="duration-300 transition-all text-center text-4xl p-2 mt-2">{error ? error : message}</h1>
                         </div>
                         <div>
+                            <p className='text-center'>Forgot Password? <span className='text-purple-400 hover:text-purple-600 duration-300 cursor-pointer' onClick={() => router.push('/register/reset')}>Reset Here</span></p>
                             <p className='text-center'>
-                                Don't have a Account? <span className='text-green-400 hover:text-green-600 duration-300 cursor-pointer' onClick={() => router.push('/register')}>Register Here</span>
+                                Don't have a Account? <span className='m-1 text-green-400 hover:text-green-600 duration-300 cursor-pointer' onClick={() => router.push('/register')}>Register Here</span>
                             </p>
                         </div>
                     </form>
