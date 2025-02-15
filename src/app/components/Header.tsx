@@ -20,6 +20,7 @@ export default function Header() {
                         <Link href="/todo" className="text-gray-300 hover:text-teal-500">Todo List</Link>
                         <Link href="/tictactoe" className="text-gray-300 hover:text-teal-500">TicTacToe</Link>
                         <Link href="/notification" className="text-gray-300 hover:text-teal-500">Notification</Link>
+                        <Link href="/register" className="text-gray-300 hover:text-teal-500">Register</Link>
 
                     </div>
                     <button
@@ -42,6 +43,7 @@ export default function Header() {
                         <Link href="/todo" onClick={() => setIsOpen(false)} className="text-gray-300 py-2">Todo List</Link>
                         <Link href="/tictactoe" onClick={() => setIsOpen(false)} className="text-gray-300 py-2">TicTacToe</Link>
                         <Link href="/notification" onClick={() => setIsOpen(false)} className="text-gray-300 py-2">Notification</Link>
+                        <Link href="/register" onClick={() => setIsOpen(false)} className="text-gray-300 py-2">Register</Link>
 
                     </div>
                 )}

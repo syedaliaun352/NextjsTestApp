@@ -44,3 +44,4 @@ next-env.d.ts
 .firebase/
 firebase.json
 .firebaserc
+src/app/firebase.tsx
