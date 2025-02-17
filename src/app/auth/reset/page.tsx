@@ -1,6 +1,6 @@
 'use client'
 
-import { resetPassword } from '@/app/firebase'
+import { firebaseResetPassword } from '@/app/firebase'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 
@@ -16,7 +16,7 @@ export default function reset() {
 
         try {
             setIsLoading(true)
-            await resetPassword(email)
+            await firebaseResetPassword(email)
             setEmail('')
             setMessage("Reset Email Sent!, Check your inbox")
         } catch (error: any) {

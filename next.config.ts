@@ -5,7 +5,10 @@ const nextConfig: NextConfig = {
   // basePath: '/next',
   // assetPrefix: '/next',
   // output: 'export',
-  trailingSlash: true
+  trailingSlash: true,
+  images: {
+    remotePatterns: [{ hostname: 'avatars.githubusercontent.com' }]
+  }
 };
 
 export default nextConfig;

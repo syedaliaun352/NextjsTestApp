@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { registerUser } from '@/app/firebase'
+import { firebaseRegisterUser } from '@/app/firebase'
 
 export default function Register() {
     const [email, setEmail] = useState('')
@@ -17,7 +17,7 @@ export default function Register() {
 
         try {
             setIsLoading(true)
-            await registerUser(email, password)
+            await firebaseRegisterUser(email, password)
             setEmail('')
             setPassword('')
             setMessage("User Created!")

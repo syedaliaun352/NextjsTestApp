@@ -1,7 +1,7 @@
 'use client'
 
 import { signIn } from 'next-auth/react'
-import { logIn } from '@/app/firebase'
+import { firebaseIogIn } from '@/app/firebase'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 
@@ -19,7 +19,7 @@ export default function Login() {
 
         try {
             setIsLoading(true)
-            await logIn(email, password)
+            await firebaseIogIn(email, password)
             setEmail('')
             setPassword('')
             setMessage("Login successfully, Redirecting..")

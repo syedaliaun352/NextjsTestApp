@@ -1,11 +1,11 @@
 import { getApp, getApps, initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged, User } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged, User, signOut } from "firebase/auth";
 import { firebaseConfig } from "./firebase_config";
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const auth = getAuth(app);
 
-const registerUser = async (email: string, password: string) => {
+const firebaseRegisterUser = async (email: string, password: string) => {
     try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
@@ -16,7 +16,7 @@ const registerUser = async (email: string, password: string) => {
     }
 };
 
-const logIn = async (email: string, password: string) => {
+const firebaseIogIn = async (email: string, password: string) => {
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
@@ -27,7 +27,7 @@ const logIn = async (email: string, password: string) => {
     }
 };
 
-const resetPassword = async (email: string) => {
+const firebaseResetPassword = async (email: string) => {
     try {
         const reset = await sendPasswordResetEmail(auth, email)
         return reset;
@@ -39,9 +39,18 @@ const resetPassword = async (email: string) => {
     }
 }
 
+const firebaseSignOutUser = async () => {
+    try {
+        await signOut(auth);
+    } catch (error: any) {
+        console.error("Sign out error:", error);
+        throw error;
+    }
+};
+
 const onAuthStateChange = (callback: (user: User | null) => void) => {
     return onAuthStateChanged(auth, callback);
 };
 
-export { auth, app, registerUser, logIn, resetPassword, onAuthStateChange, }
+export { auth, app, firebaseRegisterUser, firebaseIogIn, firebaseResetPassword, onAuthStateChange, firebaseSignOutUser }
 
