@@ -35,7 +35,7 @@ export default function reset() {
                     <h1 className="text-5xl p-2">Reset Your Password</h1>
                 </div>
                 <div className="w-full max-w-lg ">
-                    <form action="" onSubmit={onSubmit} className="mt-10 flex flex-col bg-gray-900 mx-auto p-5 rounded-2xl border border-blue-500 shadow-md">
+                    <form action="" onSubmit={onSubmit} className="mt-10 flex flex-col bg-gradient-to-r from-gray-900 to-gray-950 mx-auto p-5 rounded-2xl border border-blue-500 shadow-md">
                         <div className='flex flex-row'>
                             <label htmlFor="email" className="text-3xl pr-2">Email:</label>
                             <input
@@ -57,7 +57,7 @@ export default function reset() {
                     </form>
                     <div>
                         <p className='text-2xl text-center'>
-                            <span className='text-purple-400 hover:text-purple-600 duration-300 cursor-pointer' onClick={() => router.push('/register/login')}>Go to Login</span></p>
+                            <span className='text-purple-400 hover:text-purple-600 duration-300 cursor-pointer' onClick={() => router.push('/auth/login')}>Go to Login</span></p>
                     </div>
                 </div>
             </div>
