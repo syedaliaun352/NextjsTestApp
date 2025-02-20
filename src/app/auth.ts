@@ -5,7 +5,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     providers: [GitHub],
     pages: {
         signIn: '/auth/login',
-        newUser: '/auth/register'
+        newUser: '/auth/register',
+        error: '/auth/error'
     },
     trustHost: true,
     useSecureCookies: false,

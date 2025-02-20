@@ -4,8 +4,11 @@ const nextConfig: NextConfig = {
   /* config options here */
   // basePath: '/next',
   // assetPrefix: '/next',
-  // output: 'export',
+  output: undefined,
   trailingSlash: true,
+  bundlePagesRouterDependencies: true,
+  compress: true,
+  logging: false,
   images: {
     remotePatterns: [{ hostname: 'avatars.githubusercontent.com' }]
   }
