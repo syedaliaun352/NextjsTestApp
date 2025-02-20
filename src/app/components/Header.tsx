@@ -1,15 +1,17 @@
 'use client'
 import Link from "next/link";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { GlobalContext } from "../GlobalContext";
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
+    const { websiteName } = useContext(GlobalContext);
 
     return (
         <header className="bg-transparent border-b-2 border-teal-500">
             <nav className="container mx-auto px-4 py-3">
                 <div className="flex justify-between items-center">
-                    <h1 className="text-white font-bold text-lg">Syed Ali Aun</h1>
+                    <h1 className="text-white font-bold text-lg">{websiteName}</h1>
 
                     <div className="hidden md:flex gap-6">
                         <Link href="/" className="text-gray-300 hover:text-teal-500">Home</Link>

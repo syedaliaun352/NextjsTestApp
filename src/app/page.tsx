@@ -4,17 +4,15 @@ import { Eye, EyeOff } from "lucide-react";
 import { useContext, useEffect, useState } from "react";
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
-import { User } from "firebase/auth";
 import { onAuthStateChange, firebaseSignOutUser } from "./firebase";
 import { GlobalContext } from "./GlobalContext";
 
 export default function Home() {
-  const { data: githubUser } = useSession();
   const [divColor, setDivColor] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [typed, setTyped] = useState("");
-  const [firebaseUser, setFirebaseUser] = useState<User | null>(null)
-  const { isLoading, setIsLoading } = useContext(GlobalContext);
+  const { isLoading, setIsLoading, githubUser, firebaseUser, setFirebaseUser } = useContext(GlobalContext);
+
 
   const togglePasswordVisibility = () => {
     setPasswordVisible((prev) => !prev);
