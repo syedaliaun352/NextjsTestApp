@@ -1,11 +1,12 @@
 'use client'
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { GlobalContext } from '../GlobalContext';
 
 export default function DesktopNotification() {
     const [message, setMessage] = useState('');
     const [permission, setPermission] = useState('checking...');
-    const [loading, setLoading] = useState(false);
+    const { isLoading, setIsLoading } = useContext(GlobalContext);
 
     useEffect(() => {
         if (!('Notification' in window)) {
@@ -26,21 +27,21 @@ export default function DesktopNotification() {
             return;
         }
 
-        setLoading(true);
+        setIsLoading(true);
 
         if (Notification.permission !== 'granted') {
             const perm = await Notification.requestPermission();
             setPermission(perm);
             if (perm !== 'granted') {
                 alert('Permission for notifications was denied.');
-                setLoading(false);
+                setIsLoading(false);
                 return;
             }
         }
 
         new Notification('New Message', { body: message });
         setMessage('');
-        setLoading(false);
+        setIsLoading(false);
     };
 
     return (
@@ -56,17 +57,17 @@ export default function DesktopNotification() {
                         onChange={(e) => setMessage(e.target.value)}
                         placeholder="Enter your message"
                         className="w-full px-4 py-2 bg-gray-700 text-white placeholder-gray-400 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        disabled={loading}
+                        disabled={isLoading}
                     />
                     <button
                         onClick={sendNotification}
-                        disabled={loading}
-                        className={`w-full px-4 py-2 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-colors duration-200 ${loading
+                        disabled={isLoading}
+                        className={`w-full px-4 py-2 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-colors duration-200 ${isLoading
                             ? 'bg-blue-400 cursor-not-allowed'
                             : 'bg-blue-600 hover:bg-blue-700'
                             }`}
                     >
-                        {loading ? 'Sending...' : 'Send Notification'}
+                        {isLoading ? 'Sending...' : 'Send Notification'}
                     </button>
                 </div>
                 <p className="text-sm text-gray-400 text-center">

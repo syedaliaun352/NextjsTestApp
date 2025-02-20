@@ -1,14 +1,15 @@
 'use client'
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { GlobalContext } from '../GlobalContext';
 
 export default function Chatbot() {
     const [messages, setMessages] = useState<Array<{ text: string, isUser: boolean }>>([]);
     const [input, setInput] = useState('');
-    const [loading, setLoading] = useState(false);
     const genai = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_APIKEY || '');
     const model = genai.getGenerativeModel({ model: 'gemini-pro' });
+    const { isLoading, setIsLoading } = useContext(GlobalContext);
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
@@ -17,7 +18,7 @@ export default function Chatbot() {
         try {
             setMessages(prev => [...prev, { text: input, isUser: true }]);
             setInput('');
-            setLoading(true);
+            setIsLoading(true);
 
             const result = await model.generateContent(input);
             const response = result.response;
@@ -26,7 +27,7 @@ export default function Chatbot() {
         } catch (error) {
             setMessages(prev => [...prev, { text: 'Something went wrong', isUser: false }]);
         } finally {
-            setLoading(false);
+            setIsLoading(false);
         }
     }
 
@@ -55,10 +56,10 @@ export default function Chatbot() {
                 />
                 <button
                     type='submit'
-                    disabled={loading || !input.trim()}
+                    disabled={isLoading || !input.trim()}
                     className='px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:opacity-50'
                 >
-                    {loading ? 'Sending...' : 'Send'}
+                    {isLoading ? 'Sending...' : 'Send'}
                 </button>
             </form>
         </div>

@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { GlobalContext } from '../GlobalContext'
 
 interface WeatherLocation {
     name: string
@@ -23,12 +24,11 @@ interface WeatherData {
 export default function Weather() {
     const [city, setCity] = useState('Karachi')
     const [data, setData] = useState<any>(null)
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState<any>(null)
+    const { error, setError, isLoading, setIsLoading } = useContext(GlobalContext);
 
     async function getWeather() {
         try {
-            setLoading(true)
+            setIsLoading(true)
             setError(null)
             const apiKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY
             const weatherlink = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`
@@ -42,7 +42,7 @@ export default function Weather() {
             setError(err instanceof Error ? err.message : 'Unknown error occurred')
             setData(null)
         } finally {
-            setLoading(false)
+            setIsLoading(false)
         }
     }
 
@@ -60,9 +60,9 @@ export default function Weather() {
                 <button
                     onClick={getWeather}
                     className='p-2 m-2 bg-blue-500 text-white rounded hover:bg-blue-600 disabled:bg-gray-500 transition-colors'
-                    disabled={loading}
+                    disabled={isLoading}
                 >
-                    {loading ? 'Loading...' : 'Get Weather'}
+                    {isLoading ? 'Loading...' : 'Get Weather'}
                 </button>
                 {error && <p className="text-red-500 mt-2">{error}</p>}
             </div>

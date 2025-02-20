@@ -1,15 +1,15 @@
 'use client'
 
 import { firebaseResetPassword } from '@/app/firebase'
+import { GlobalContext } from '@/app/GlobalContext'
 import { useRouter } from 'next/navigation'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 export default function reset() {
     const [email, setEmail] = useState('')
-    const [isLoading, setIsLoading] = useState(false)
-    const [error, setError] = useState<String | null>(null)
     const [message, setMessage] = useState('')
     const router = useRouter();
+    const { isLoading, setIsLoading, error, setError } = useContext(GlobalContext);
 
     const onSubmit = async (e: any) => {
         e.preventDefault()

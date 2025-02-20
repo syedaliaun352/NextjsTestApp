@@ -1,16 +1,17 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { firebaseRegisterUser } from '@/app/firebase'
+import { GlobalContext } from '@/app/GlobalContext'
 
 export default function Register() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [isLoading, setIsLoading] = useState(false)
-    const [error, setError] = useState<String | null>(null)
     const [message, setMessage] = useState('')
     const router = useRouter()
+    const { isLoading, setIsLoading, error, setError } = useContext(GlobalContext);
+
 
     const onSubmit = async (e: any) => {
         e.preventDefault()

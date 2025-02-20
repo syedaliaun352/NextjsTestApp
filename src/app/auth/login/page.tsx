@@ -3,16 +3,16 @@
 import { signIn } from 'next-auth/react'
 import { firebaseIogIn } from '@/app/firebase'
 import { useRouter } from 'next/navigation'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { GlobalContext } from '@/app/GlobalContext'
 
 export default function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [isLoading, setIsLoading] = useState(false)
-    const [error, setError] = useState<String | null>(null)
     const [message, setMessage] = useState('')
     const router = useRouter()
     const [githubloading, setGithubLoading] = useState(false)
+    const { isLoading, setIsLoading, error, setError } = useContext(GlobalContext);
 
     const onSubmit = async (e: any) => {
         e.preventDefault()

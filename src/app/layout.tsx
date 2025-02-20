@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { SessionProvider } from "next-auth/react";
+import GlobalState from "./GlobalContext";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -31,7 +32,9 @@ export default function RootLayout({
       >
         <Header />
         <SessionProvider>
-          {children}
+          <GlobalState>
+            {children}
+          </GlobalState>
         </SessionProvider>
         <Footer />
       </body>
