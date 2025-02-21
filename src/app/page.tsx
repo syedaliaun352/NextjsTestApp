@@ -6,6 +6,7 @@ import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import { onAuthStateChange, firebaseSignOutUser } from "./firebase";
 import { GlobalContext } from "./GlobalContext";
+import Clock from "./components/Clock";
 
 export default function Home() {
   const [divColor, setDivColor] = useState("");
@@ -86,6 +87,7 @@ export default function Home() {
       )}
 
       <div className="p-4 m-4 flex flex-col justify-center items-center space-y-4">
+        <Clock />
         <label
           htmlFor="divcolor"
           className="text-white font-medium flex flex-col items-start"

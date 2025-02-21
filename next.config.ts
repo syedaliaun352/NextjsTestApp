@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
   compress: true,
   logging: false,
   images: {
-    remotePatterns: [{ hostname: 'avatars.githubusercontent.com' }]
+    remotePatterns: [{ hostname: '*.githubusercontent.com' }]
   }
 };
 
