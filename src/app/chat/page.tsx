@@ -7,7 +7,7 @@ import { GlobalContext } from '../GlobalContext';
 export default function Chatbot() {
     const [messages, setMessages] = useState<Array<{ text: string, isUser: boolean }>>([]);
     const [input, setInput] = useState('');
-    const genai = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_APIKEY || '');
+    const genai = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GOOGLE_APIKEY || '');
     const model = genai.getGenerativeModel({ model: 'gemini-pro' });
     const { isLoading, setIsLoading } = useContext(GlobalContext);
 
