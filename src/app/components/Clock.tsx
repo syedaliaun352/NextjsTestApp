@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { Rubik_Glitch_Pop } from 'next/font/google'
 
-const dancing = Rubik_Glitch_Pop({ weight: '400' })
+const rubik = Rubik_Glitch_Pop({ weight: '400', preload: true, subsets: ['latin'] })
 
 export default function Clock() {
     const [time, setTime] = useState(new Date())
@@ -20,7 +20,7 @@ export default function Clock() {
 
     return (
         <div className="flex justify-center items-center bg-transparent">
-            <div className={`text-6xl font-black ${dancing.className} text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600`}>
+            <div className={`text-6xl font-black ${rubik.className} text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600`}>
                 {`${hours}:${minutes}:${seconds}`} <span className="text-2xl">{ampm}</span>
             </div>
         </div>
