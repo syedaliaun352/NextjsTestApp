@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect, useContext } from 'react';
 import { firebasePhoneVerifyCode, useFirebaseAuth } from './../../firebase';
-import { GlobalContext } from '@/app/GlobalContext';
 import { ConfirmationResult } from 'firebase/auth';
+import { GlobalContext } from '@/app/GlobalContext';
 
 export default function PhoneVerify() {
     const [phoneNumber, setPhoneNumber] = useState('');

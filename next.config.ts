@@ -4,11 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   // basePath: '/next',
   // assetPrefix: '/next',
-  output: undefined,
   trailingSlash: true,
-  bundlePagesRouterDependencies: true,
-  compress: true,
-  logging: false,
   images: {
     remotePatterns: [{ hostname: '*.githubusercontent.com' }]
   }
