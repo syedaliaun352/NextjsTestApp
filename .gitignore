@@ -45,5 +45,5 @@ next-env.d.ts
 .firebase/
 firebase.json
 .firebaserc
-src/app/firebase_config.tsx
+src/app/firebase_config*
 serviceAccountKey.json

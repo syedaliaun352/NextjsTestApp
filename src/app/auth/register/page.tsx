@@ -71,6 +71,11 @@ export default function Register() {
                                 Already have a Account? <span className='text-blue-400 hover:text-blue-600 duration-300 cursor-pointer' onClick={() => router.push('/auth/login')}>Login Here</span>
                             </p>
                         </div>
+                        <div className='mt-1'>
+                            <p className='text-center'>
+                                Register with Phone Number: <span className='text-blue-400 hover:text-blue-600 duration-300 cursor-pointer' onClick={() => router.push('/auth/phone')}>Click Here</span>
+                            </p>
+                        </div>
                     </form>
                 </div>
             </div>
